@@ -8,7 +8,7 @@ twice. Example:
     return [0, 1].
 */
 /**我以为有多组数据呢**/
-
+/** HashMap **/
 import java.util.*;
 
 public class _001_TwoSum {
