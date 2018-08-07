@@ -13,6 +13,7 @@ public class _203_Remove_Linked_List_Elements {
         while (tmp != null && tmp.next != null){
             //move to next
             if(tmp.next.val == val){
+                 /**TODO  the next is never be null  **/
                 tmp.next = (tmp.next == null)? null : tmp.next.next;
                 continue;
             }
