@@ -1,3 +1,5 @@
+
+
 /**
  * Given a binary matrix A,
  * we want to flip the image horizontally,
@@ -26,5 +28,27 @@
 public class _832_FlippingAnImage {
     public int[][] flipAndInvertImage(int[][] A) {
 
+            for(int i = 0 ; i < A.length ; i++ ){
+                horizontal(A[i]);
+                invert(A[i]);
+            }
+        return A ;
         }
+
+    private void invert(int[] ints) {
+        for(int i = 0 ; i <ints.length ; i++)
+        {
+           ints[i] = ints[i] ^ 1 ;
+        }
+    }
+
+    private void horizontal(int[] ints) {
+        for(int i = 0 ; i <ints.length /2  ; i++)
+        {
+            int swap = ints[i] ;
+            ints[i] = ints[ints.length - i -1 ];
+            ints[ints.length - i -1] = swap;
+        }
+    }
+
 }
