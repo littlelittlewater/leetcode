@@ -21,7 +21,7 @@ public class _665_Non_decreasing_Array {
         }
         return true;
     }
-    /**the right **/
+    /** list the right **/
     /** or simply the question **/
     /** or force solution **/
     public boolean checkPossibility_1(int[] nums) {
@@ -36,5 +36,4 @@ public class _665_Non_decreasing_Array {
                 p == 1 || p == nums.length - 1 ||  // reversed pair is first or last element
                 nums[p - 2] <= nums[p] || nums[p - 1] <= nums[p + 1]); // normal case range [p-2 --> p+1] all valid
     }
-}
 }
