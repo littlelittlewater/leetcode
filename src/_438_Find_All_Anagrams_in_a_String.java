@@ -38,18 +38,18 @@ import java.util.List;
  */
 public class _438_Find_All_Anagrams_in_a_String {
     public static void main(String[] args) {
-        System.out.println(new _438_Find_All_Anagrams_in_a_String().findAnagrams("cbacabcab", "abc"));
+        System.out.println(new _438_Find_All_Anagrams_in_a_String().findAnagrams("aa", "bb"));
     }
     public List<Integer> findAnagrams(String s, String p) {
         HashMap<Character, Integer> that = new HashMap<>();
         HashMap<Character, Integer> tmp = new HashMap<>();
         for(char c: p.toCharArray()) that.put(c, that.getOrDefault(c, 0) + 1);
         List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < s.length() - p.length() + 1; i++) {
+        for (int i = 0; i < s.length() ; i++) {
             System.out.println(tmp.toString());
             if (i < p.length()) {
-                tmp.put(p.charAt(i), tmp.getOrDefault(p.charAt(i), 0) + 1);
-                if (tmp.equals(that)) result.add(i);
+                tmp.put(s.charAt(i), tmp.getOrDefault(s.charAt(i), 0) + 1);
+                if (tmp.equals(that)) result.add(0);
                 continue;
             }
             tmp.put(s.charAt(i), tmp.getOrDefault(s.charAt(i), 0) + 1);
@@ -60,7 +60,7 @@ public class _438_Find_All_Anagrams_in_a_String {
                 tmp.remove(s.charAt(i - p.length()));
             else
                 tmp.put(s.charAt(i - p.length()), tmp.getOrDefault(s.charAt(i - p.length()), 0) - 1);
-            if (tmp.equals(that)) result.add(i);
+            if (tmp.equals(that)) result.add(i- p.length()+1);
 
         }
 

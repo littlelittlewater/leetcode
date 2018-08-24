@@ -52,19 +52,22 @@ public class _706_Design_HashMap {
         }
         return prev;
     }
-}
 
-class Bucket {
-    final ListNode head = new ListNode(-1, -1);
-}
 
-class ListNode {
-    int key, val;
-    ListNode next;
+    class Bucket {
+        final ListNode head = new ListNode(-1, -1);
+    }
 
-    ListNode(int key, int val) {
-        this.key = key;
-        this.val = val;
+    class ListNode {
+        int key, val;
+        ListNode next;
+
+        ListNode(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
     }
 }
+
+
 
