@@ -15,6 +15,8 @@ public class _83_Remove_Duplicates_from_Sorted_List {
         System.out.println(new _83_Remove_Duplicates_from_Sorted_List().deleteDuplicates(new ListNode(new int[]{1,1,2,3,3,4,4})));
     }
     public ListNode deleteDuplicates(ListNode head) {
+        if(head == null) return head;
+
         ListNode tmp = head;
         Integer last = head.val;
         while (tmp!= null && tmp.next != null){

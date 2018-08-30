@@ -37,25 +37,29 @@
 class Solution3 {
     public String longestCommonPrefix(String[] strs) {
         int minLength = Integer.MAX_VALUE ;
-        for (String s:strs) minLength = Math.min(minLength,s.length());
+        if(strs.length ==0) return "";
+        for (String s:strs) {
+            if (s.length() ==0 ) return "";
+            minLength = Math.min(minLength,s.length());
+        }
         String  result = "";
         boolean flag = true;
         for(int i = 0 ; i< minLength &&flag; i++){
             char tmp = strs[0].charAt(i);
-            for (int j =1 ; j <strs.length -1 ; j++){
+            for (int j =1 ; j <strs.length ; j++){
                 if(tmp  !=  strs[j].charAt(i)){
                     flag = false;
                 }
 
             }
+            if(flag)
             result += tmp;
         }
         return  result;
     }
 
-
     public static void main(String[] args) {
-        new Solution3().longestCommonPrefix(new String[]{"fdsf","fdsf","fds"});
+        System.out.println(new Solution3().longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
 
     }
 
